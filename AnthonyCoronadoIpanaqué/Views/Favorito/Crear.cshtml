@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewData["Title"] = "Crear";
+}
+
+<h1>Agregar Favorito</h1>
+
+<form action="/Favorito/Crear" method="post">
+
+
+
+    <div class="form-group">
+        <label>Pelicula</label>
+        <select class="form-control" name="PeliculaId">
+            <option value="value">Seleccione Pelicula</option>
+            @foreach (var item in ViewBag.Pelicula)
+            {
+                if (item.IdPelicula == Model.PeliculaId)
+                {
+                    <option selected value="@item.IdPelicula">@item.Nombre</option>
+                }
+                else
+                {
+                    <option value="@item.IdPelicula">@item.Nombre</option>
+                }
+
+            }
+        </select>
+        @Html.ValidationMessage("PeliculaId")
+    </div>
+
+
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" value="true" name="EsFavorito"> Es Favorito
+        </label>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-primary">Guardar</button>
+    </div>
+    <div class="form-group">
+        <a class="btn btn-primary" href="/Favorito/Index">Cancelar</a>
+    </div>
+</form>
+

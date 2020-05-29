@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewData["Title"] = "Mostar";
+    Layout = null;
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nombre Pelicula</th>
+            <th scope="col">Director</th>
+            <th scope="col">Año</th>
+            <th scope="col">Imagen</th>
+
+
+
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.IdPelicula</td>
+                <td>@item.Nombre</td>
+                <td>@item.Director.Nombre</td>
+                <td>@item.Año</td>
+                <td>@item.Imagen</td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/js/main.js"></script>

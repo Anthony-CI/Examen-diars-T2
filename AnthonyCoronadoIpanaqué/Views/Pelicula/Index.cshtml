@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/js/main.js"></script>
+
+<div>
+    <a class="btn btn-primary" href="/Pelicula/Crear" role="button">Agregar Pelicula</a>
+</div>
+<div>
+    <a class="btn btn-primary" href="/Favorito" role="button">Agregar Favorito</a>
+</div>
+<div>
+    <form class="form-inline" action="/pelicula" method="get">
+        <div>
+            <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Buscar" id="buscar" value="@ViewBag.Query">
+        </div>
+    </form>
+</div>
+
+
+
+
+<div id="Tabla">
+
+</div>
+
+
+
